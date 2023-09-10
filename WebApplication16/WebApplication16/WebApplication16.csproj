@@ -1,0 +1,220 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head runat="server">
+		<title></title>
+	</head>
+	<body>
+		<form id="form1" runat="server">
+			<div id="wrap">
+				<div id="header">
+					<center>
+						Students Attendance
+					</center>
+				</div>
+				<div id="menu">
+					<ul id="menus">
+						<li>
+							<a href="Home.aspx">Home</a>
+						</li>
+						<li>
+							<a href="About Us.aspx">About Us</a>
+						</li>
+						<li>
+							<a href="Contact Us.aspx">Contact Us</a>
+						</li>
+					</ul>
+				</div>
+				<div id="main">
+					<div id="first">
+						<img src="../Images/Vels2.png" />
+					</div>
+					<div id="second">
+						<img src="../img/Vels1.jpg" style="position: relative; top: 4px; left: -3px; margin-top: 5px" />
+					</div>
+					<div id="third">
+						&nbsp;<img src="../Images/Vels.png" style="position: relative; top: 1px; left: 95px" />
+					</div>
+				</div>
+				<div id="attendance_area">
+					&nbsp;<br />
+					&nbsp;
+					<table class="auto-style1">
+						<tr>
+							<td class="auto-style4">
+								<strong>Select Programme:</strong>
+							</td>
+							<td class="auto-style4">
+								<asp:DropDownList ID="DropDownList1" runat="server" Width="180px">
+									<asp:ListItem Selected="True">Select</asp:ListItem>
+									<asp:ListItem>P.G</asp:ListItem>
+									<asp:ListItem>U.G</asp:ListItem>
+								</asp:DropDownList>
+							</td>
+							<td class="auto-style3">
+								<strong>Class:</strong>
+							</td>
+							<td class="auto-style5">
+								<asp:DropDownList ID="DropDownList2" runat="server" Width="180px">
+									<asp:ListItem Selected="True">Select Class</asp:ListItem>
+									<asp:ListItem>A</asp:ListItem>
+									<asp:ListItem>B</asp:ListItem>
+									<asp:ListItem>C</asp:ListItem>
+								</asp:DropDownList>
+							</td>
+						</tr>
+						<tr>
+							<td class="auto-style8">
+								Year<strong>:</strong>
+							</td>
+							<td class="auto-style8">
+								<asp:DropDownList ID="DropDownList3" runat="server" Width="180px">
+									<asp:ListItem Selected="True">Select Year</asp:ListItem>
+									<asp:ListItem>First Year</asp:ListItem>
+									<asp:ListItem>Second Year</asp:ListItem>
+									<asp:ListItem>Third Year</asp:ListItem>
+								</asp:DropDownList>
+							</td>
+							<td class="auto-style9">
+								<strong>Semester:</strong>
+							</td>
+							<td class="auto-style10">
+								<asp:DropDownList ID="DropDownList4" runat="server" Width="180px">
+									<asp:ListItem Selected="True">Select Semester</asp:ListItem>
+									<asp:ListItem>First Semester</asp:ListItem>
+									<asp:ListItem>Second Semester</asp:ListItem>
+								</asp:DropDownList>
+							</td>
+						</tr>
+						<tr>
+							<td class="auto-style4">
+								&nbsp;
+							</td>
+							<td class="auto-style4">
+								&nbsp;
+							</td>
+							<td class="auto-style3">
+								&nbsp;
+							</td>
+							<td class="auto-style5">
+								&nbsp;
+							</td>
+						</tr>
+						<tr>
+						</tr>
+					</table>
+					<br />
+					<table class="auto-style6">
+						<tr>
+							<td class="auto-style12">
+								<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/Calender.jpg"
+									OnClick="ImageButton1_Click" Style="position: relative; top: 0px; left: 0px;
+                            height: 36px; width: 39px;" />
+								<asp:TextBox ID="TxtBoxDate" runat="server" Height="20px"></asp:TextBox>
+							</td>
+							<td class="auto-style13">
+								<asp:Calendar ID="Calendar1" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66"
+									BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt"
+									ForeColor="#663399" Height="200px" ShowGridLines="True" Width="220px" OnSelectionChanged="Calendar1_SelectionChanged"
+									OnDayRender="Calendar1_DayRender">
+									<DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
+									<NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
+									<OtherMonthDayStyle ForeColor="#CC9966" />
+									<SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
+									<SelectorStyle BackColor="#FFCC66" />
+									<TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
+									<TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
+								</asp:Calendar>
+							</td>
+						</tr>
+						<tr>
+							<td class="auto-style14">
+								<strong>Hour:</strong>
+							</td>
+							<td class="auto-style15">
+								<asp:DropDownList ID="DropDownList5" runat="server" Width="180px">
+									<asp:ListItem Selected="True">Select Hour</asp:ListItem>
+									<asp:ListItem>I</asp:ListItem>
+									<asp:ListItem>II</asp:ListItem>
+									<asp:ListItem>III</asp:ListItem>
+									<asp:ListItem>IV</asp:ListItem>
+									<asp:ListItem>V</asp:ListItem>
+									<asp:ListItem>VI</asp:ListItem>
+								</asp:DropDownList>
+							</td>
+						</tr>
+						<tr>
+							<td class="auto-style11">
+								<strong>Day:</strong>
+							</td>
+							<td class="auto-style11">
+								<asp:TextBox ID="TxtBoxDay" runat="server" Width="180px"></asp:TextBox>
+							</td>
+						</tr>
+						<tr>
+							<td class="auto-style11" colspan="2">
+								&nbsp;
+							</td>
+						</tr>
+						<tr>
+							<td class="auto-style7" colspan="2">
+								<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#DEBA84"
+									BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2"
+									OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AlternatingRowStyle-BackColor="Aqua">
+									<AlternatingRowStyle BackColor="Aqua"></AlternatingRowStyle>
+									<Columns>
+										<asp:BoundField DataField="REGNO" HeaderText="REGNO" />
+										<asp:BoundField DataField="FIRSTNAME" HeaderText="FIRST NAME" />
+										<asp:BoundField DataField="LASTNAME" HeaderText="LAST NAME" />
+										<asp:TemplateField HeaderText="PRESENT/ABSENT">
+											<ItemTemplate>
+												<asp:CheckBox ID="ChckBoxStatus" runat="server" />
+											</ItemTemplate>
+											<ItemStyle HorizontalAlign="Center" />
+										</asp:TemplateField>
+										<asp:TemplateField HeaderText="AUTHORIZED ABSENT">
+											<ItemTemplate>
+												<asp:CheckBox ID="ChckBoxAuthorized" runat="server" />
+											</ItemTemplate>
+											<ItemStyle HorizontalAlign="Center" />
+										</asp:TemplateField>
+									</Columns>
+									<FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+									<HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+									<PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+									<RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+									<SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+									<SortedAscendingCellStyle BackColor="#FFF1D4" />
+									<SortedAscendingHeaderStyle BackColor="#B95C30" />
+									<SortedDescendingCellStyle BackColor="#F1E5CE" />
+									<SortedDescendingHeaderStyle BackColor="#93451F" />
+								</asp:GridView>
+							</td>
+						</tr>
+						<tr>
+							<td class="auto-style7" colspan="2">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<asp:Button ID="BtnSubmit" runat="server" BorderColor="Red" Height="30px" Style="font-weight: 700;
+                            position: relative; top: 0px; left: -94px; right: 94px;" Text="SUBMIT" Width="90px"
+									OnClick="Button2_Click" />
+								<asp:Button ID="BtnView" runat="server" BorderColor="Red" Height="30px" OnClick="BtnView_Click"
+									Style="position: relative; top: 0px; left: -59px; font-weight: 700" Text="VIEW"
+									Width="90px" />
+								<asp:CheckBox ID="CheckAll" runat="server" Style="font-weight: 700" Text="Select All" />
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<strong>&nbsp;</strong>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</form>
+	</body>
+</html>
